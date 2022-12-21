@@ -7,8 +7,8 @@ The methodology of concealing the content of messages. Originates from the Greek
 
 
 
-### Caesar Cipher
-Otherwise known as a shift cipher, the **caesar cipher** takes each letter in a plaintext message and shifts it by `n` indexes in the looping alphabet.
+### Shift Cipher
+Otherwise known as a caesar cipher, the **shift cipher** takes each letter in a plaintext message and shifts it by `n` indexes in the looping alphabet.
 
 ----------------------
 
