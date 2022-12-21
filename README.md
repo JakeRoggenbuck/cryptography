@@ -5,7 +5,8 @@ The methodology of concealing the content of messages. Originates from the Greek
 
 **Project progress**
 
-
+- [ ] Table substitution cipher
+- [ ] 
 
 ### Shift Cipher
 Otherwise known as a caesar cipher, the **shift cipher** takes each letter in a plaintext message and shifts it by `n` indexes in the looping alphabet.
