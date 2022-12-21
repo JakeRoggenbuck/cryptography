@@ -23,34 +23,26 @@ The methodology of concealing the content of messages. Originates from the Greek
 - [ ] Rainbow table attack
 - [ ] RSA
 - [ ] Diffie-Hellman key exchange
-- [ ] 
+- [ ] ElGamal
+- [ ] Complexity theory
+- [ ] Abstract algebra review
+- [ ] Factorization
+- [ ] Discrete log
+- [ ] Decisional Diffie-Hellman assumption
+- [ ] Primality testing
+- [ ] Elliptic-curve cryptography
+- [ ] Lenstra's elliptic-curve factorization
+- [ ] Elliptic-curve digital signature algorithm
+- [ ] RSA signature
+- [ ] ElGamal signature
+- [ ] Existential forgery
+- [ ] Shortest Vector Problem (bounds)
+- [ ] Fundamental domain of lattices
+- [ ] Reduction of Closest Vector Problem to SVP
+- [ ] Subset sum of cryptosystem
+- [ ] NTRU encryption algorithm
+- [ ] Ring Learning With Errors
 
 ### Shift Cipher
 Otherwise known as a caesar cipher, the **shift cipher** takes each letter in a plaintext message and shifts it by `n` indexes in the looping alphabet.
-
-----------------------
-
-RSA.  
-diffie-hellman key exchange.  
-ElGamal.  
-complexity theory.  
-abstract algebra review.  
-Factorization.  
-discrete log.  
-decisional diffie-hellman assumption.  
-primality testing.  
-elliptic-curve cryptography.  
-lenstra's elliptic-curve factorization.  
-elliptic-curve digital signature algorithm.  
-RSA signature.  
-ElGamal signature.  
-existential forgery.  
-shortest vector problem (bounds).  
-fundamental domain of lattices.  
-reduction of closest vector problem to SVP.  
-subset sum cryptosystem.  
-NTRU encryption algorithm.  
-ring learning with errors.  
- 
-
 
