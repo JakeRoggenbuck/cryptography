@@ -43,6 +43,6 @@ The methodology of concealing the content of messages. Originates from the Greek
 - [ ] NTRU encryption algorithm
 - [ ] Ring Learning With Errors
 
-### Shift Cipher
+### [Shift Cipher](shift-cipher)
 Otherwise known as a caesar cipher, the **shift cipher** takes each letter in a plaintext message and shifts it by `n` indexes in the looping alphabet.
 
