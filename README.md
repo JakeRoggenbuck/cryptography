@@ -40,5 +40,16 @@ decisional diffie-hellman assumption.
 primality testing.  
 elliptic-curve cryptography.  
 lenstra's elliptic-curve factorization.  
+elliptic-curve digital signature algorithm.  
+RSA signature.  
+ElGamal signature.  
+existential forgery.  
+shortest vector problem (bounds).  
+fundamental domain of lattices.  
+reduction of closest vector problem to SVP.  
+subset sum cryptosystem.  
+NTRU encryption algorithm.  
+ring learning with errors.  
+ 
 
 
