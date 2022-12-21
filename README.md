@@ -1,5 +1,5 @@
 ### Cryptography?
-The methodology of concealing the content of messages. Originates from the Greek root word **kryptos**, which means 'hidden'. The modern scientific study of crytography is sometimes referred to as _cryptology_[^1].
+The methodology of concealing the content of messages. Originates from the Greek root word _kryptos_, which means _hidden_. The modern scientific study of crytography is sometimes referred to as _cryptology_[^1].
 
 [^1]: HOFFSTEIN, JEFFREY. Mathematical Cryptography. SPRINGER-VERLAG NEW YORK, 2016. 
 
