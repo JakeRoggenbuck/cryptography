@@ -2,4 +2,6 @@
 
 <img width="500" alt="encrypt2" src="https://user-images.githubusercontent.com/114739901/208865462-dda6dd75-1d34-486d-aa06-111e4184e98e.png">
 
-<img width="500" alt="timeit" src="https://user-images.githubusercontent.com/114739901/208865500-d3e7b5c6-94a7-43a7-a57b-4f763d940767.png">
+<img width="2000" alt="timeit" src="https://user-images.githubusercontent.com/114739901/208865500-d3e7b5c6-94a7-43a7-a57b-4f763d940767.png">
+
+<img width="2000" alt="timeit-results" src="https://user-images.githubusercontent.com/114739901/208867172-090e809b-a8c5-4c7b-bd14-bc291efe30f3.png">
