@@ -12,3 +12,8 @@ Otherwise known as a caesar cipher, the **shift cipher** takes each letter in a 
 
 ----------------------
 
+
+table substitution cipher
+digraph substitution cipher
+
+
