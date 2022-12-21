@@ -13,7 +13,16 @@ Otherwise known as a caesar cipher, the **shift cipher** takes each letter in a 
 ----------------------
 
 
-table substitution cipher
-digraph substitution cipher
-
-
+table substitution cipher. 
+digraph substitution cipher. 
+shift cipher. 
+vigenere cipher. 
+steganographic. 
+xor. 
+one-time pad + proof of perfect secrecy. 
+information theory: entropy analysis. 
+information theory: wordle solver. 
+block cipher. 
+stream cipher. 
+data encryption standard. 
+padding oracle attack. 
