@@ -1,5 +1,3 @@
-import time
-
 """
 Teo Honda-Scully | 2022
 
@@ -14,24 +12,8 @@ ciphertext = "OaTyqwGerPSApdfghjXUIlzxcZLMVWKuZvbCRnmYNoQBkisFDtJH "
 encryption = dict(zip(list(plaintext), list(ciphertext)))
 decryption = dict(zip(list(ciphertext), list(plaintext)))
 
-type_input = ""
-user_input = ""
-
 def encrypt(plaintext):
     return ''.join(encryption[c] for c in plaintext)
 
 def decrypt(ciphertext):
     return ''.join(decryption[c] for c in ciphertext)
-
-print("\nWelcome to the table substitution cipher tool! Type 'q' to quit\n")
-
-while (type_input != 'q'):
-    type_input = input("Type 'e' to encrypt\nType 'd' to decrypt\n\n > ")
-    if (type_input == 'e'):
-        user_input = input("Enter plaintext: ")
-        print(f'\n{encrypt(user_input)}\n')
-        time.sleep(1)
-    if (type_input == 'd'):
-        user_input = input("Enter ciphertext: ")
-        print(f'\n{decrypt(user_input)}\n')
-        time.sleep(1)
