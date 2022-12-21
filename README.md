@@ -12,29 +12,24 @@ The methodology of concealing the content of messages. Originates from the Greek
 - [ ] Steganography
 - [ ] Xor
 - [ ] One-time pad + proof of perfect secrecy
+- [ ] Information theory: entropy analysis
+- [ ] Information theory: wordle solver
+- [ ] Block cipher
+- [ ] Stream cipher
+- [ ] Data encryption standard
+- [ ] Padding oracle attack
+- [ ] Hashing
+- [ ] MACs
+- [ ] Rainbow table attack
+- [ ] RSA
+- [ ] Diffie-Hellman key exchange
+- [ ] 
 
 ### Shift Cipher
 Otherwise known as a caesar cipher, the **shift cipher** takes each letter in a plaintext message and shifts it by `n` indexes in the looping alphabet.
 
 ----------------------
 
-
-table substitution cipher.  
-digraph substitution cipher.  
-shift cipher.  
-vigenere cipher.  
-steganographic.   
-xor.   
-one-time pad + proof of perfect secrecy.   
-information theory: entropy analysis.   
-information theory: wordle solver.   
-block cipher.   
-stream cipher.   
-data encryption standard.   
-padding oracle attack.   
-hashing.  
-MACs.  
-rainbow table attack.  
 RSA.  
 diffie-hellman key exchange.  
 ElGamal.  
