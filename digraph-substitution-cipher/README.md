@@ -69,7 +69,7 @@ sbox = [[shift_alpha(alpha, shift_column)[i] + (shift_alpha(alpha, shift_row)[j]
 
 ### Verification
 
-If we look at the table, we see that the `h` character is denoted by `8` and the `e` character is denoted by `5`
+If we look at the table, we see that the `h` character is denoted by `8`. Likewise, the `e` character is denoted by `5`. By finding the intersection point at `(8, 5)`, we see that the resulting ciphertext digraph is `vl`, which matches our program's output.
 
 ```python 'ignore
 string = "he"
@@ -81,19 +81,49 @@ Result:
 
 <img width="775" alt="Screen Shot 2022-12-21 at 9 07 57 PM" src="https://user-images.githubusercontent.com/114739901/209061352-b379e066-ea67-42cc-b32e-6c246a6239a6.png">
 
-```
+  
+  
+# Test cases
+
+### Case: spaces
+
+```python 'ignore
 string = "hello world"
 ```
 
-Result:
-
 <img width="635" alt="Screen Shot 2022-12-21 at 9 11 40 PM" src="https://user-images.githubusercontent.com/114739901/209061878-59d91b5a-2566-4485-9895-f6be3e7cc34b.png">
+
+-------------------------
+
+### Case: one letter (no digraph available)
+
+```python 'ignore
+string = "a"
+```
 
 <img width="635" alt="Screen Shot 2022-12-21 at 9 12 00 PM" src="https://user-images.githubusercontent.com/114739901/209061884-df74de7d-ee86-497d-80b4-7bb509cc80ae.png">
 
+```python 'ignore
+string = "a"
+```
+
 <img width="635" alt="Screen Shot 2022-12-21 at 9 12 27 PM" src="https://user-images.githubusercontent.com/114739901/209061888-986d603c-a7bf-4de5-bd9c-046270db4a74.png">
 
+> If the plaintext is one character, a digraph does not exist. Create and return ciphertext digraph using 'z' char as padding.
+
+---------------------------
+
+### Case: odd number of letters after `strip()`
+
+```python 'ignore
+string = "from teo"
+```
+
 <img width="635" alt="Screen Shot 2022-12-21 at 9 13 06 PM" src="https://user-images.githubusercontent.com/114739901/209061894-f2ac3d57-634d-4197-ab9f-c794ef1ade76.png">
+
+--------------------------
+
+### Case: capitalization
 
 <img width="631" alt="Screen Shot 2022-12-21 at 9 15 11 PM" src="https://user-images.githubusercontent.com/114739901/209062119-cc8c969e-3f3e-4ec1-94f7-ca0b8b2a975c.png">
 
