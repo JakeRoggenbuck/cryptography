@@ -25,26 +25,37 @@ alpha = "abcdefghijklmnopqrstuvwxyz"
 def shift_alpha(alpha, shift) -> str:
     return alpha[shift:len(alpha)] + alpha[:shift]
 
-sbox = [[shift_alpha(alpha, shift_column)[i] + (shift_alpha(alpha, shift_row)[j]) for j in range(len(alpha))] for i in range(len(alpha))]
+sbox = [[shift_alpha(alpha, shift_column)[i] + (shift_alpha(alpha, shift_row)[j])
+         for j in range(len(alpha))] for i in range(len(alpha))]
 
 """
-Equals a value of:
+sbox equals a value of:
 [['jr', 'js', 'jt', 'ju', ...], ['kr', 'ks', 'kt', 'ku', ...], ... [...'in', 'io', 'ip', 'iq']]
 
 Calling the 'BA' intersection of table should return: 'js' (col = 1, row = 0) -> (table[0][1])
 """
 
-#print(sbox)
-
 def encrypt(plaintext) -> str:
+    # If the plaintext is one character, a digraph does not exist. Create and return
+    # ciphertext digraph using 'z' char as padding.
     if (len(plaintext) == 1):
-        return sbox[shift_alpha(alpha, shift_row).index(plaintext)]
+        return sbox[alpha.index('z')][alpha.index(plaintext)]
+
+    # At this point, len(plaintext) >= 2. Force lowercase and then create the
+    # digraph list using only even pairs of letters. Handling for if plaintext 
+    # is odd (ex. 7 letters) occurs on line 58.
     ciphertext = ""
     plaintext = plaintext.lower()
-    digraphs = [plaintext[i] + plaintext[i + 1] for i in range(len(plaintext) - 1) if i % 2 == 0]
-    
-    for i in range(len(digraphs)):
-        pass
-        
+    digraphs = [plaintext[i] + plaintext[i + 1]
+                for i in range(len(plaintext) - 1) if i % 2 == 0]
 
-encrypt("hello")
+    # Populate 'ciphertext' string with ciphertext digraphs
+    for i in digraphs:
+        ciphertext += sbox[alpha.index(i[1])][alpha.index(i[0])]
+
+    # If the plaintext length is odd, add a new ciphertext digraph using the last
+    # character of plaintext and the char 'z' as padding.
+    if (len(plaintext) % 2 == 1):
+        ciphertext += sbox[alpha.index('z')][alpha.index(plaintext[-1])]
+
+    return ciphertext
