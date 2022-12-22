@@ -51,6 +51,10 @@ This substitution cipher looks up each plaintext letter in an encryption table a
 decryption_table = {v: k for k, v in encryption_table.items()}
 ```
 
+### [Digraph-substitution-cipher](digraph-substitution-cipher)
+
+Similar to the monoalphabetic table-substitution-cipher, this is another substitution cipher. Unlike the monoalphabetic table cipher, instead of replacing every plaintext letter with its corresponding ciphertext letter, this cipher replaces every plaintext digraph with its corresponding ciphertext digraph.
+
 ### [Shift Cipher](shift-cipher)
 Otherwise known as a caesar cipher, the **shift cipher** takes each letter in a plaintext message and shifts it by `n` indexes in the looping alphabet.
 
