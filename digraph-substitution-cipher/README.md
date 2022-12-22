@@ -77,13 +77,13 @@ If we look at the table, we see that the `h` character is denoted by `8`. Likewi
 
 ```python 'ignore
 string = "he"
-print("The encrypted string '%s' will be: %s" % (string, encrypt(string)))
-print("The decrypted string '%s' will be: %s" % (encrypt(string), decrypt(encrypt(string))))
+print("Encrypting string %s... %s" % (string, encrypt(string)))
+print("Decrypting string %s... %s" % (encrypt(string), decrypt(encrypt(string))))
 ```
 
 Result: 
 
-<img width="775" alt="Screen Shot 2022-12-21 at 9 07 57 PM" src="https://user-images.githubusercontent.com/114739901/209061352-b379e066-ea67-42cc-b32e-6c246a6239a6.png">
+<img width="899" alt="Screen Shot 2022-12-21 at 9 55 11 PM" src="https://user-images.githubusercontent.com/114739901/209066874-0e9da925-fdb9-4759-ad6f-043d9740d600.png">
 
 ### Breaking an ordered alphabetic permutation digraph substitution cipher:
 
