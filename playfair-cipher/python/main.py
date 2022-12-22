@@ -17,7 +17,23 @@ key = "shadow"
 # Exclude 'x' -> 25 letter alpha
 alpha = "abcdefghijklmnopqrstuvwyz"  
 
-sbox = [[(alpha[i:i+5]).split()] for i in range(0, len(alpha), 5)]
-print(sbox)
+# Returns a string first populated by the key letters and then is filled
+# in with the rest of the ordered alphabet letters
+def shift_alpha(key, alpha):
+    arr = ""
+    for char in key:
+        arr += char
+    for char in alpha:
+        if char not in arr:
+            arr += char
+    return arr
 
-print(alpha.split())
+box_list = shift_alpha(key, alpha)
+box = [list(box_list[i:i+5]) for i in range(0, len(box_list), 5)]
+
+"""
+box equals a value of:
+[['s', 'h', 'a', 'd', 'o'], ..., ['t', 'u', 'v', 'y', 'z']]
+"""
+
+
