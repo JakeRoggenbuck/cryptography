@@ -49,7 +49,7 @@ def encrypt(plaintext) -> str:
     # (ex. 7 letters) occurs on line 60.
     ciphertext = ""
     digraphs = [plaintext[i] + plaintext[i + 1]
-                for i in range(len(plaintext) - 1) if i % 2 == 0]
+                for i in range(0, (len(plaintext) - 1), 2)]
 
     # Populate 'ciphertext' string with ciphertext digraphs
     for i in digraphs:

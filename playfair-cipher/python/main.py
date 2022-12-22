@@ -90,15 +90,19 @@ def encrypt(plaintext: str) -> str:
     if (len(plaintext) == 1):
         return box[alpha.index('z')][alpha.index(plaintext)]
 
+    print(plaintext)
+    for i in range(0, len(plaintext), 2):
+        print(plaintext[i])
+
+
     # At this point, len(plaintext) >= 2. Create the digraph list using 
-    # only even pairs of letters. Handling for if plaintext is odd 
+    # only even pairs of letters. Handling for if modified plaintext is odd 
     # (ex. 7 letters) occurs on line 106.
     ciphertext = ""
     digraphs = [plaintext[i] + plaintext[i + 1]
-                for i in range(len(plaintext) - 1) if i % 2 == 0]
-
+                for i in range(0, (len(plaintext) - 1), 2)]
     # Populate 'ciphertext' string with ciphertext digraphs
-    for digraph in digraphs:
+    for digraph in digraphs:            
         ciphertext += get_ciphertext(digraph)
 
     # If the plaintext length is odd, add a new ciphertext digraph using the last
