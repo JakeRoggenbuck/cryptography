@@ -26,7 +26,7 @@ def get_table():
     for j in range(1, len(alpha) + 1):
         table += "\n| %s |" % j
         for i in range(1, len(alpha) + 1):
-            table += " %s |" % sbox[j - 1][i - 1]
+            table += " **%s** |" % sbox[j - 1][i - 1]
     return table
 
 if __name__ == "__main__":
