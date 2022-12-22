@@ -36,16 +36,8 @@ box equals a value of:
 [['s', 'h', 'a', 'd', 'o'], ..., ['t', 'u', 'v', 'y', 'z']]
 """
 
-print(box)
-
-# Takes in a digraph argument and returns the correct ciphertext digraph
-def get_ciphertext(digraph: str) -> str:
-    cdigraph = ""
-
-    # We never include handling for empty plaintext in encrypt().
-    if digraph == "":
-        return
-
+# Returns a tuple of the row and column of 'box' for each character in a digraph
+def get_position(digraph):
     rows = [0, 0]
     cols = [0, 0]
     # Used to break out of loop once both the row and columns are 
@@ -64,6 +56,18 @@ def get_ciphertext(digraph: str) -> str:
                 finished[i] = 1
             if (finished[0] and finished[1]):
                 break
+    
+    return rows, cols
+
+# Takes in a digraph argument and returns the correct ciphertext digraph
+def get_ciphertext(digraph: str) -> str:
+    cdigraph = ""
+
+    # We never include handling for empty plaintext in encrypt().
+    if digraph == "":
+        return
+
+    rows, cols = get_position(digraph)
 
     # Case one: Both in same row
     if (rows[0] == rows[1]):
@@ -98,7 +102,7 @@ def encrypt(plaintext: str) -> str:
 
     # At this point, len(plaintext) >= 2. Create the digraph list using 
     # only even pairs of letters. Handling for if modified plaintext is odd 
-    # (ex. 7 letters) occurs on line 106.
+    # (ex. 7 letters) occurs on line 116.
     ciphertext = ""
     digraphs = [plaintext[i] + plaintext[i + 1]
                 for i in range(0, (len(plaintext) - 1), 2)]
@@ -114,4 +118,47 @@ def encrypt(plaintext: str) -> str:
 
     return ciphertext
 
-print(encrypt("helloe"))
+# ---------------------------------------------------------------------------------- #
+
+def get_plaintext(digraph: str) -> str:
+    pdigraph = ""
+    
+    # We never include handling for empty plaintext in decrypt().
+    if digraph == "":
+        return
+
+    rows, cols = get_position(digraph)
+
+    # Case one: Both in same row
+    if (rows[0] == rows[1]):
+        for i in range(2):
+            pdigraph += box[rows[0]][(cols[i] - 1) % 5]
+
+    # Case two: Both in same column
+    elif (cols[0] == cols[1]):
+        for i in range(2):
+            pdigraph += box[(rows[i] - 1) % 5][cols[0]]
+        
+    # Case three: Both in different rows and columns
+    else:
+        pdigraph += box[rows[0]][cols[1]]
+        pdigraph += box[rows[1]][cols[0]]
+
+    return pdigraph
+
+def decrypt(ciphertext: str) -> str:
+    plaintext = ""
+
+     # Ciphertext will always be even length and len >= 2. No need for special handling.
+    digraphs = [ciphertext[i] + ciphertext[i + 1]
+                for i in range(0, (len(ciphertext) - 1), 2)]
+    print(digraphs)
+
+    # Populate 'plaintext' string with plaintext digraphs
+    for digraph in digraphs:            
+        plaintext += get_plaintext(digraph)
+    
+    print(plaintext)
+    return plaintext
+
+decrypt(encrypt("word"))
