@@ -43,6 +43,14 @@ The methodology of concealing the content of messages. Originates from the Greek
 - [ ] NTRU encryption algorithm
 - [ ] Ring Learning With Errors
 
+### [Table-substitution-cipher](table-substitution-cipher)
+
+This substitution cipher looks up each plaintext letter in an encryption table and writes the corresponding ciphertext letter in its place. Evidently, the decryption table is the inverse of the encryption table
+
+```python ,ignore
+decryption_table = {v: k for k, v in encryption_table.items()}
+```
+
 ### [Shift Cipher](shift-cipher)
 Otherwise known as a caesar cipher, the **shift cipher** takes each letter in a plaintext message and shifts it by `n` indexes in the looping alphabet.
 
