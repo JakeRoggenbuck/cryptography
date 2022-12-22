@@ -152,13 +152,11 @@ def decrypt(ciphertext: str) -> str:
      # Ciphertext will always be even length and len >= 2. No need for special handling.
     digraphs = [ciphertext[i] + ciphertext[i + 1]
                 for i in range(0, (len(ciphertext) - 1), 2)]
-    print(digraphs)
 
     # Populate 'plaintext' string with plaintext digraphs
     for digraph in digraphs:            
         plaintext += get_plaintext(digraph)
     
-    print(plaintext)
     return plaintext
 
-decrypt(encrypt("word"))
+decrypt(encrypt("hello world"))
