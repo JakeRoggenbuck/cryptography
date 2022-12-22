@@ -36,16 +36,18 @@ Calling the 'BA' intersection of table should return: 'js' (col = 1, row = 0) ->
 """
 
 def encrypt(plaintext) -> str:
+    # Force lowercase and strip spaces
+    plaintext = plaintext.replace(" ", "").lower()
+
     # If the plaintext is one character, a digraph does not exist. Create and return
     # ciphertext digraph using 'z' char as padding.
     if (len(plaintext) == 1):
         return sbox[alpha.index('z')][alpha.index(plaintext)]
 
-    # At this point, len(plaintext) >= 2. Force lowercase and then create the
-    # digraph list using only even pairs of letters. Handling for if plaintext 
-    # is odd (ex. 7 letters) occurs on line 58.
+    # At this point, len(plaintext) >= 2. Create the digraph list using 
+    # only even pairs of letters. Handling for if plaintext is odd 
+    # (ex. 7 letters) occurs on line 60.
     ciphertext = ""
-    plaintext = plaintext.lower()
     digraphs = [plaintext[i] + plaintext[i + 1]
                 for i in range(len(plaintext) - 1) if i % 2 == 0]
 
@@ -59,3 +61,18 @@ def encrypt(plaintext) -> str:
         ciphertext += sbox[alpha.index('z')][alpha.index(plaintext[-1])]
 
     return ciphertext
+
+
+def decrypt(ciphertext) -> str:
+    plaintext = ""
+
+    # Ciphertext will always be even length and len >= 2. No need for special handling.
+    digraphs = [ciphertext[i] + ciphertext[i + 1]
+                for i in range(len(ciphertext) - 1)]
+    
+    for i in digraphs:
+        plaintext += sbox[alpha.index(i[1])][alpha.index(i[0])]
+    
+    print(plaintext)
+
+print(encrypt("hello"))
