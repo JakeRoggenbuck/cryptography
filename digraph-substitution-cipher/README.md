@@ -31,3 +31,7 @@ def shift_alpha(alpha, shift) -> str:
 sbox = [[shift_alpha(alpha, shift_column)[i] + (shift_alpha(alpha, shift_row)[j])
          for j in range(len(alpha))] for i in range(len(alpha))]
 ```
+
+`sbox` is reflected below
+
+![imgonline-com-ua-Negative-ze8WEjKSqFMEraD](https://user-images.githubusercontent.com/114739901/209051753-8035721e-d4e8-44cf-899c-eb8c39f51b95.jpg)
