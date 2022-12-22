@@ -7,8 +7,10 @@ The methodology of concealing the content of messages. Originates from the Greek
 
 - [ ] Table substitution cipher
 - [ ] Digraph substitution cipher
+- [ ] Playfair cipher
 - [ ] Shift cipher
 - [ ] Vigenere cipher
+- [ ] Affine cipher
 - [ ] Steganography
 - [ ] Xor
 - [ ] One-time pad + proof of perfect secrecy
