@@ -17,8 +17,8 @@ For simplicity's sake, this will only handle lowercase alphabets.
 
 # Instead of each row/column label expressing "abcdef..", we can add disorder by
 # shifting the labels, making the table less predictable. Ex: "abcdef.." -> "fghijk..""
-shift_row = 17
-shift_column = 9
+shift_row = 11
+shift_column = 23
 
 alpha = "abcdefghijklmnopqrstuvwxyz"
 
