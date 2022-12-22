@@ -88,12 +88,13 @@ def encrypt(plaintext: str) -> str:
     # If the plaintext is one character, a digraph does not exist. Create and return
     # ciphertext digraph using 'z' char as padding.
     if (len(plaintext) == 1):
-        return box[alpha.index('z')][alpha.index(plaintext)]
+        return get_ciphertext(plaintext + 'z')
 
-    print(plaintext)
-    for i in range(0, len(plaintext), 2):
-        print(plaintext[i])
-
+    for i in range(0, len(plaintext) - 1, 2):
+        if plaintext[i] == plaintext[i + 1]:
+            # Repeating character in current digraph breakdown
+            # Insert 'z' char as padding in between repeat chars.
+            plaintext = plaintext[:i + 1] + 'z' + plaintext[i + 1:]
 
     # At this point, len(plaintext) >= 2. Create the digraph list using 
     # only even pairs of letters. Handling for if modified plaintext is odd 
@@ -101,6 +102,7 @@ def encrypt(plaintext: str) -> str:
     ciphertext = ""
     digraphs = [plaintext[i] + plaintext[i + 1]
                 for i in range(0, (len(plaintext) - 1), 2)]
+
     # Populate 'ciphertext' string with ciphertext digraphs
     for digraph in digraphs:            
         ciphertext += get_ciphertext(digraph)
@@ -112,4 +114,4 @@ def encrypt(plaintext: str) -> str:
 
     return ciphertext
 
-print(encrypt("hello"))
+print(encrypt("helloe"))
