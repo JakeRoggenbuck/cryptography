@@ -114,7 +114,7 @@ string = "a"
 <img width="635" alt="Screen Shot 2022-12-21 at 9 12 00 PM" src="https://user-images.githubusercontent.com/114739901/209061884-df74de7d-ee86-497d-80b4-7bb509cc80ae.png">
 
 ```python 'ignore
-string = "a"
+string = "b"
 ```
 
 <img width="635" alt="Screen Shot 2022-12-21 at 9 12 27 PM" src="https://user-images.githubusercontent.com/114739901/209061888-986d603c-a7bf-4de5-bd9c-046270db4a74.png">
