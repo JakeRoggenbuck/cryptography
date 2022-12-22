@@ -78,10 +78,3 @@ def decrypt(ciphertext) -> str:
         plaintext += (alpha[column] + alpha[row])
 
     return plaintext
-print("\n")
-
-string = "From TEO"
-print("Encrypting string %s... %s" % (string, encrypt(string)))
-print("Decrypting string %s... %s" % (encrypt(string), decrypt(encrypt(string))))
-
-print("\n")
