@@ -67,21 +67,20 @@ def get_ciphertext(digraph: str) -> str:
 
     # Case one: Both in same row
     if (rows[0] == rows[1]):
-        for i in range(len(digraph)):
+        for i in range(2):
             cdigraph += box[rows[0]][(cols[i] + 1) % 5]
 
     # Case two: Both in same column
     elif (cols[0] == cols[1]):
-        for i in range(len(digraph)):
+        for i in range(2):
             cdigraph += box[(rows[i] + 1) % 5][cols[0]]
         
     # Case three: Both in different rows and columns
     else:
-        pass
+        cdigraph += box[rows[0]][cols[1]]
+        cdigraph += box[rows[1]][cols[0]]
 
     return cdigraph
-
-print(get_ciphertext("ho"))
 
 def encrypt(plaintext: str) -> str:
     plaintext = plaintext.replace(" ", "").lower()
@@ -93,18 +92,20 @@ def encrypt(plaintext: str) -> str:
 
     # At this point, len(plaintext) >= 2. Create the digraph list using 
     # only even pairs of letters. Handling for if plaintext is odd 
-    # (ex. 7 letters) occurs on line 60.
+    # (ex. 7 letters) occurs on line 106.
     ciphertext = ""
-    #digraphs = [plaintext[i] + plaintext[i + 1]
-    #            for i in range(len(plaintext) - 1) if i % 2 == 0]
+    digraphs = [plaintext[i] + plaintext[i + 1]
+                for i in range(len(plaintext) - 1) if i % 2 == 0]
 
     # Populate 'ciphertext' string with ciphertext digraphs
-    #for i in digraphs:
-    #    ciphertext += sbox[alpha.index(i[1])][alpha.index(i[0])]
+    for digraph in digraphs:
+        ciphertext += get_ciphertext(digraph)
 
     # If the plaintext length is odd, add a new ciphertext digraph using the last
     # character of plaintext and the char 'z' as padding.
-    #if (len(plaintext) % 2 == 1):
-    #    ciphertext += sbox[alpha.index('z')][alpha.index(plaintext[-1])]
+    if (len(plaintext) % 2 == 1):
+        ciphertext += get_ciphertext(plaintext[-1] + 'z')
 
     return ciphertext
+
+print(encrypt("hello"))
