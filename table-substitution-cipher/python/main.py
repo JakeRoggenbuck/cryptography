@@ -12,9 +12,9 @@ ciphertext = "OaTyqwGerPSApdfghjXUIlzxcZLMVWKuZvbCRnmYNoQBkisFDtJH "
 encryption = dict(zip(list(plaintext), list(ciphertext)))
 decryption = dict(zip(list(ciphertext), list(plaintext)))
 
-def encrypt(plaintext):
+def encrypt(plaintext) -> str:
     plaintext = plaintext.replace(" ", "")
     return ''.join(encryption[c] for c in plaintext)
 
-def decrypt(ciphertext):
+def decrypt(ciphertext) -> str:
     return ''.join(decryption[c] for c in ciphertext)
