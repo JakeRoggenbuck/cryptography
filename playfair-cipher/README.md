@@ -28,32 +28,37 @@ After the key is finished populating the beginning of the list, the rest of the 
 | **m**| **n** | **p** | **q** | **r** |
 | **t** | **u** | **v** | **y** | **z** |
 
-Rule one: The plaintext (like the digraph cipher) is split into digraphs (sets of two characters). If there is a standalone letter, a 'z' is padded for the creation of a digraph.
+> Did you notice that the letter `x` is missing? That is because in a 5x5 matrix, one letter from the 26 letter alphabet will be missing! We are choosing `x` to fill this role.
 
-Rule two: Two of the same letters cannot be used in the same digraph. For example, 'llama' gets separated into 'lz', 'la', and 'ma'. The 'z' is inserted in between the two equal letters.
+### Matrix constraints / rules
 
-Note: A word such as 'moo' is okay, because this gets separated into the digraphs 'mo' and 'oz', in which there are no repeating letters in the same pair.
+- **Constraint one**: The plaintext (like the digraph cipher) is split into [digraphs](https://en.wikipedia.org/wiki/Digraph) (sets of two characters). If there is a standalone letter, a `z` is padded for the creation of a digraph.
+
+- **Constraint two**: Two of the same letters cannot be used in the same digraph. For example, `llama` gets separated into `lz`, `la`, and `ma`. The `z` is inserted in between the two repeating letters previously existing in the same digraph.
+
+> Note: A word such as `moo` is okay because this gets separated into the digraphs `mo` and `oz`, in which there are no repeating letters in the same pair.
+
+### Encryption rules
 
 There are a few rules (cases) for encryption as well:
 
-Case 1: Both plaintext digraph characters exist in the same row of the 5x5 matrix.
-    For each letter in the digraph: the corresponding ciphertext letter is the
-    letter to the right of the plaintext letter in the row. 
+- **Case 1**: Both plaintext digraph characters exist in the same row of the 5x5 matrix. For each letter in the digraph: the corresponding ciphertext letter is the letter to the right of the plaintext letter in the row. 
 
-    For example: row = ['a', 'b', 'c', 'd', 'e']. encrypt('ac') -> 'bd'
+```python 'ignore
+row = ['a', 'b', 'c', 'd', 'e']
+encrypt('ac')  # returns 'bd'
 
-    Note: the row wraps around back into itself (index % 5).
+# the row wraps around back into itself (index % 5).
+encrypt('be')  # returns 'ca'
+```
 
-    For example: row = ['a', 'b', 'c', 'd', 'e']. encrypt('be') -> 'ca'
+- **Case 2**: Both plaintext digraph characters exist in the same column of the 5x5 matrix.For each letter in the digraph: the corresponding ciphertext letter is the letter below the plaintex letter in the column. The same wrap around rule applies vertically.
 
-Case 2: Both plaintext digraph characters exist in the same column of the 5x5 matrix.
-    For each letter in the digraph: the corresponding ciphertext letter is the letter
-    below the plaintex letter in the column. The same wrap around rule applies vertically.
+```python 'ignore
+matrix = [['a'], ['b'], ['c'], ['d'], ['e']]  # column -> abcde
+encrypt('bc')  # return 'cd'
+```
 
-    For example: column = [['a'], ['b'], ['c'], ['d'], ['e']]. encrypt('bc') -> 'cd'
+- **Case 3**: Neither of the above two cases apply. When this happens, form a rectangle with each plaintext letter serving as diagonal vertices. The two opposite vertices are the corresponding ciphertext letters.
 
-Case 3: Neither of the above two cases apply. When this happens, form a rectangle with
-    each plaintext letter serving as diagonal vertices. The two opposite vertices are the
-    corresponding ciphertext letters.
 
-"""
