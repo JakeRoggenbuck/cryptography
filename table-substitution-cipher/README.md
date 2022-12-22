@@ -31,3 +31,9 @@ Random permutation: `OaTyqwGerPSApdfghjXUIlzxcZLMVWKuZvbCRnmYNoQBkisFDtJH`
 ### Results
 <img width="2000" alt="timeit" src="https://user-images.githubusercontent.com/114739901/208865500-d3e7b5c6-94a7-43a7-a57b-4f763d940767.png">
 <img width="2000" alt="timeit-results" src="https://user-images.githubusercontent.com/114739901/208867172-090e809b-a8c5-4c7b-bd14-bc291efe30f3.png">
+
+### Breaking a table substitution cipher:
+
+If the message is long enough, one can use [frequency analysis](https://en.wikipedia.org/wiki/Frequency_analysis) to determine each ciphertext letter's respective plaintext letter. If the message is not long, but multiple ciphertext messages are available, one can use [differential cryptanalysis](https://en.wikipedia.org/wiki/Differential_cryptanalysis).
+
+If there is only one message and it is short, there is no viable way to break this cipher.
