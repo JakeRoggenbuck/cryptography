@@ -17,16 +17,16 @@ sbox = [[shift_alpha(alpha, shift_column)[i] + (shift_alpha(alpha, shift_row)[j]
 # Everything local inside function so that it can be imported if needed.
 def get_table():
     table = "|  |"
-    t = "|  | 0 |\n| --- | --- |\n| 0 |  |"
+    t = "|  | 0 |\n| :---: | :---: |\n| 0 |  |"
     for i in range(1, len(alpha) + 1):
         table += " %s |" % i
     table += "\n"
     for i in range(1, len(alpha) + 2):
-        table += "| --- "
+        table += "| :---: "
     for j in range(1, len(alpha) + 1):
         table += "\n| %s |" % j
         for i in range(1, len(alpha) + 1):
-            table += " **%s** |" % sbox[j - 1][i - 1]
+            table += " `%s` |" % sbox[j - 1][i - 1]
     return table
 
 if __name__ == "__main__":
