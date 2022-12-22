@@ -1,3 +1,19 @@
+### Table-substitution-cipher
+
+This substitution cipher looks up each plaintext letter in an encryption table and writes the corresponding ciphertext letter in its place. Evidently, the decryption table is the inverse of the encryption table
+
+```
+decryption_table = {v: k for k, v in encryption_table.items()}
+```
+
+In a table substitution cipher, the ciphertext alphabet is a randomly chosen permutation of the 26 alphabet letters. The random permutation for this cipher is both lowercase and capital alphabet letters
+
+Random permutation: `OaTyqwGerPSApdfghjXUIlzxcZLMVWKuZvbCRnmYNoQBkisFDtJH`
+
+> Note that in order for decryption to work, the encryption function must have the property that no two plaintext letters go to the same ciphertext letter. A function with this property is said to be _one-to-one_ or _injective_[^1].
+
+[^1]: HOFFSTEIN, JEFFREY. Mathematical Cryptography. SPRINGER-VERLAG NEW YORK, 2016. 
+
 <img width="500" alt="encrypt1" src="https://user-images.githubusercontent.com/114739901/208865487-ab8a54d0-3ec4-438d-8057-9374a40a925d.png">
 
 <img width="500" alt="encrypt2" src="https://user-images.githubusercontent.com/114739901/208865462-dda6dd75-1d34-486d-aa06-111e4184e98e.png">
