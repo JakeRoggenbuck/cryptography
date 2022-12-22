@@ -12,6 +12,12 @@ In cryptography, a key is typically a string of characters used within an algori
 
 The matrix of this cipher has no labels and is a 25 letter list wrapped into a 5x5 matrix. If the key is `shadow`, the first six elements of the list will be `s`, `h`, `a`, `d`, `o`, `w`, where the `w` wraps around to the second row while the rest lies in the first row.
 
+After the key is finished populating the beginning of the list, the rest of the list will be filled with the leftover alphabet letters in order. In other words, the seventh element will be `b`. The eighth `c`. The ninth `e`.
+
+<table>
+<tr><th>6</th><th>25</th></tr>
+<tr><td>
+
 | s | h | a | d | o |
 | :---: | :---: | :---: | :---: | :---: |
 | **w** |   |   |   |   |
@@ -19,7 +25,7 @@ The matrix of this cipher has no labels and is a 25 letter list wrapped into a 5
 | ⠀ |   |   |   |   |
 | ⠀ |   |   |   |   |
 
-After the key is finished populating the beginning of the list, the rest of the list will be filled with the leftover alphabet letters in order. In other words, the seventh element will be `b`. The eighth `c`. The ninth `e`.
+</td><td>
 
 | s | h | a | d | o |
 | :---: | :---: | :---: | :---: | :---: |
@@ -27,6 +33,9 @@ After the key is finished populating the beginning of the list, the rest of the 
 | **g** | **i** | **j** | **k** | **l** |
 | **m**| **n** | **p** | **q** | **r** |
 | **t** | **u** | **v** | **y** | **z** |
+
+</td></tr>
+</table>
 
 > Did you notice that the letter `x` is missing? That is because in a 5x5 matrix, one letter from the 26 letter alphabet will be missing! We are choosing `x` to fill this role.
 
