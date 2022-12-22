@@ -1,31 +1,38 @@
 ### Playfair cipher
 
-The playfair cipher! This one is sort of like the digraph substitution cipher, except
-there are a few more rules. Unlike the digraph substitution cipher, this one does not
-have a ciphertext digraph intersection value based on the two inputted label points.
+The **playfair cipher**! This one is sort of like the [digraph substitution cipher](https://github.com/thondascully/cryptography/tree/master/digraph-substitution-cipher), except there are a few more rules. Unlike the digraph substitution cipher, this one does not have a ciphertext digraph intersection value based on the two inputted label points.
 
-For starters, this cipher has a key!
+For starters, this cipher has a [key](https://en.wikipedia.org/wiki/Key_(cryptography))!
 
-The matrix of this cipher also has no labels and is a 25 letter list 
-wrapped into a 5x5 matrix. If the key is 'beacon', the first six 
-elements of the list will be 'b', 'e', 'a', 'c', 'o', 'n', where the
-'n' wraps around to the second row while the rest lies in the first row.
+### What is a key?
 
-After the key is finished populating the beginning of the list, the rest
-of the list will be filled with the leftover alphabet letters in order.
-In other words, the seventh element will be 'd'. The eighth 'f'.
+In cryptography, a key is typically a string of characters used within an algorithm so that the output appears random
 
-Rule one: The plaintext (like the digraph cipher) is split into digraphs
-(sets of two characters). If there is a standalone letter, a 'z' is padded
-for the creation of a digraph.
+### Playfair method
 
-Rule two: Two of the same letters cannot be used in the same digraph.
-For example, 'llama' gets separated into 'lz', 'la', and 'ma'. The
-'z' is inserted in between the two equal letters.
+The matrix of this cipher has no labels and is a 25 letter list wrapped into a 5x5 matrix. If the key is `shadow`, the first six elements of the list will be `s`, `h`, `a`, `d`, `o`, `w`, where the `w` wraps around to the second row while the rest lies in the first row.
 
-Note: A word such as 'moo' is okay, because this gets separated into the
-digraphs 'mo' and 'oz', in which there are no repeating letters in the same
-pair.
+| s | h | a | d | o |
+| :---: | :---: | :---: | :---: | :---: |
+| **w** |   |   |   |   |
+| ⠀ |   |   |   |   |
+| ⠀ |   |   |   |   |
+| ⠀ |   |   |   |   |
+
+After the key is finished populating the beginning of the list, the rest of the list will be filled with the leftover alphabet letters in order. In other words, the seventh element will be `b`. The eighth `c`. The ninth `e`.
+
+| s | h | a | d | o |
+| :---: | :---: | :---: | :---: | :---: |
+| **w** | **b** | **c** | **e** | **f** |
+| **g** | **i** | **j** | **k** | **l** |
+| **m**| **n** | **p** | **q** | **r** |
+| **t** | **u** | **v** | **y** | **z** |
+
+Rule one: The plaintext (like the digraph cipher) is split into digraphs (sets of two characters). If there is a standalone letter, a 'z' is padded for the creation of a digraph.
+
+Rule two: Two of the same letters cannot be used in the same digraph. For example, 'llama' gets separated into 'lz', 'la', and 'ma'. The 'z' is inserted in between the two equal letters.
+
+Note: A word such as 'moo' is okay, because this gets separated into the digraphs 'mo' and 'oz', in which there are no repeating letters in the same pair.
 
 There are a few rules (cases) for encryption as well:
 
