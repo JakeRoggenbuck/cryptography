@@ -11,6 +11,10 @@ For a digraph substitution cipher, the row and column labels are alphabet letter
 
 _For simplicity's sake, this will only handle lowercase alphabets._
 
+### Disclaimer: do NOT implement this as a security tool. A single key shift results in a bad substitution box. Truly random sbox choices should provide the 26*26 possible choices per digraph ciphertext, but this sbox is not random (since it remains in an ordered alphabetic permutation).
+
+More information on how to break this cipher is below
+
 -----------------------
 
 ### Implementation
@@ -81,8 +85,14 @@ Result:
 
 <img width="775" alt="Screen Shot 2022-12-21 at 9 07 57 PM" src="https://user-images.githubusercontent.com/114739901/209061352-b379e066-ea67-42cc-b32e-6c246a6239a6.png">
 
-  
-  
+### Breaking an ordered alphabetic permutation digraph substitution cipher:
+
+Cracking a digraph table substitution cipher whose sbox generator is not random boils down to finding a cipher text digraph that has two repeating letters. 
+
+For example, `(C, P)` returns `GG` . Since each row and column is an ordered alphabetic permutation (shifted), the user now knows the row is shifted by `G-C` = `17` letters. Likewise, the column is shifted `G-P` = `4` letters. Those are the shift keys...
+
+In reality, an sbox design should choose each digraph result uniformly at random without replacement, but there other are ways to design it to be even more resistant to [differential cryptanaylsis](https://en.wikipedia.org/wiki/Differential_cryptanalysis)
+
 # Test cases
 
 ### Case: spaces
