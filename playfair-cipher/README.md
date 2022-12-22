@@ -61,4 +61,16 @@ encrypt('bc')  # return 'cd'
 
 - **Case 3**: Neither of the above two cases apply. When this happens, form a rectangle with each plaintext letter serving as diagonal vertices. The two opposite vertices are the corresponding ciphertext letters.
 
+In the example below, the plaintext digraph is `br`. These two points serve as the diagonal vertices of a rectangle. The opposite two vertices, `f` and `n`, make up the ciphertext digraph.
+
+| s | h | a | d | o |
+| :---: | :---: | :---: | :---: | :---: |
+| **w** | ***`b`*** | **c** | **e** | ***`f`*** |
+| **g** | **i** | **j** | **k** | **l** |
+| **m**| ***`n`*** | **p** | **q** | ***`r`*** |
+| **t** | **u** | **v** | **y** | **z** |
+
+> `b` -> `f`  
+> `n` -> `r`  
+
 
