@@ -68,11 +68,9 @@ def decrypt(ciphertext) -> str:
 
     # Ciphertext will always be even length and len >= 2. No need for special handling.
     digraphs = [ciphertext[i] + ciphertext[i + 1]
-                for i in range(len(ciphertext) - 1)]
+                for i in range(len(ciphertext) - 1) if i % 2 == 0]
     
     for i in digraphs:
         plaintext += sbox[alpha.index(i[1])][alpha.index(i[0])]
     
-    print(plaintext)
-
-print(encrypt("hello"))
+    return plaintext
