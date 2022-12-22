@@ -44,15 +44,37 @@ def get_ciphertext(digraph: str) -> str:
     if digraph == "":
         return
 
-    active_row: int
+    rows = [0, 0]
+    cols = [0, 0]
+    # Used to break out of loop once both the row and columns are 
+    # found for both chars.
+    finished = [0, 0] 
+
     for row in box:
-        for letter in row:
-            if letter == digraph[0]:
-                active_row = box.index(row)
+        for i in range(2):
+            if row.__contains__(digraph[i]):
+                rows[i] = box.index(row)
+                cols[i] = row.index(digraph[i])
+                finished[i] = 1
+            if (finished[0] and finished[1]):
                 break
 
-    return active_row
-print(get_ciphertext("sh"))
+    # Case one: Both in same row
+    if (rows[0] == rows[1]):
+        pass
+
+    # Case two: Both in same column
+    if (cols[0] == cols[1]):
+        pass
+
+    # Case three: Both in different rows and columns
+    else:
+        pass
+
+    return rows, cols
+
+print(get_ciphertext("oz"))
+
 def encrypt(plaintext: str) -> str:
     plaintext = plaintext.replace(" ", "").lower()
 
