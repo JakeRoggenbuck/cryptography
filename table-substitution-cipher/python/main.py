@@ -13,8 +13,10 @@ encryption = dict(zip(list(plaintext), list(ciphertext)))
 decryption = dict(zip(list(ciphertext), list(plaintext)))
 
 def encrypt(plaintext) -> str:
+    if not plaintext.isalpha(): return
     plaintext = plaintext.replace(" ", "")
     return ''.join(encryption[c] for c in plaintext)
 
 def decrypt(ciphertext) -> str:
+    if not plaintext.isalpha(): return
     return ''.join(decryption[c] for c in ciphertext)
