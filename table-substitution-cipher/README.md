@@ -16,7 +16,7 @@ Random permutation: `OaTyqwGerPSApdfghjXUIlzxcZLMVWKuZvbCRnmYNoQBkisFDtJH`
 
 ----------------------------------
 
-Methods: 
+### Methods: 
 - **One**: Dictionary with key-value pairs of `{ plaintext[0], ... : ciphertext[0], ... }`
 - **Two**: String index matching with a plaintext permutation string and a ciphertext permutation string
 
@@ -24,7 +24,6 @@ Methods:
 
 > There are alternative `index()` algorithms which have better time complexities
 
------------------------------------
 | Method one | Method two |
 | --- | --- |
 | <img width="1000" alt="encrypt1" src="https://user-images.githubusercontent.com/114739901/208865487-ab8a54d0-3ec4-438d-8057-9374a40a925d.png"> | <img width="1000" alt="encrypt2" src="https://user-images.githubusercontent.com/114739901/208865462-dda6dd75-1d34-486d-aa06-111e4184e98e.png"> |
