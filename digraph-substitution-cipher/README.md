@@ -11,7 +11,7 @@ For a digraph substitution cipher, the row and column labels are alphabet letter
 
 _For simplicity's sake, this will only handle lowercase alphabets._
 
-### Disclaimer: do NOT implement this as a security tool. A single key shift results in a bad substitution box. Truly random sbox choices should provide the 26*26 possible choices per digraph ciphertext, but this sbox is not random (since it remains in an ordered alphabetic permutation).
+### Disclaimer: do NOT implement this as a security tool. A single key shift results in a bad [substitution box](https://en.wikipedia.org/wiki/S-box). Truly random sbox choices should provide the 26*26 possible choices per digraph ciphertext, but this sbox is not random (since it remains in an ordered alphabetic permutation).
 
 More information on how to break this cipher is below
 
