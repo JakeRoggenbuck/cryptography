@@ -6,12 +6,26 @@ Prints a GH Markdown formatted ciphertext table that can be pasted into an MD fi
 
 import main
 
+alpha = main.alpha
 shift_row = main.shift_row
 shift_column = main.shift_column
+shift_alpha = main.shift_alpha
 
-
+# Everything local inside function so that it can be imported if needed.
 def get_table():
-    return
+    table = "|  |"
+    t = "|  | 0 |\n| --- | --- |\n| 0 |  |"
+    for i in range(1, len(alpha) + 1):
+        table += " %s |" % i
+    table += "\n"
+    for i in range(1, len(alpha) + 2):
+        table += "| --- "
+    for j in range(1, len(alpha) + 1):
+        table += "\n| %s |" % j
+        for i in range(1, len(alpha) + 1):
+            table += "  |"
+    return table
 
 if __name__ == "__main__":
+    print(shift_alpha)
     print(get_table())
