@@ -24,10 +24,37 @@ Random permutation: `OaTyqwGerPSApdfghjXUIlzxcZLMVWKuZvbCRnmYNoQBkisFDtJH`
 
 > There are alternative `index()` algorithms which have better time complexities
 
-| Method one | Method two |
-| --- | --- |
-| <img width="1000" alt="encrypt1" src="https://user-images.githubusercontent.com/114739901/208865487-ab8a54d0-3ec4-438d-8057-9374a40a925d.png"> | <img width="1000" alt="encrypt2" src="https://user-images.githubusercontent.com/114739901/208865462-dda6dd75-1d34-486d-aa06-111e4184e98e.png"> |
+
+**Method one:**
+
+```python 'ignore
+def encrypt1(plaintext) -> str:
+    return ''.join(encryption[c] for c in plaintext)
+```
+
+**Method two:**
+
+```python 'ignore
+def encrypt2(user_input):
+    text = ""
+    for c in user_input:
+        text += ciphertext[plaintext.index(c)]
+    return text
+```
 
 ### Results
-<img width="2000" alt="timeit" src="https://user-images.githubusercontent.com/114739901/208865500-d3e7b5c6-94a7-43a7-a57b-4f763d940767.png">
+
+```python 'ignore
+import timeit
+string = "hello world my name is teo"
+print("Time for encrypt1: '%s'" % timeit.Timer(lambda: encrypt1(string)).timeit(1))
+print("Time for encrypt2: '%s'" % timeit.Timer(lambda: encrypt2(string)).timeit(1))
+```
+
 <img width="2000" alt="timeit-results" src="https://user-images.githubusercontent.com/114739901/208867172-090e809b-a8c5-4c7b-bd14-bc291efe30f3.png">
+
+### Breaking a table substitution cipher:
+
+If the message is long enough, one can use [frequency analysis](https://en.wikipedia.org/wiki/Frequency_analysis) to determine each ciphertext letter's respective plaintext letter. If the message is not long, but multiple ciphertext messages are available, one can use [differential cryptanalysis](https://en.wikipedia.org/wiki/Differential_cryptanalysis).
+
+If there is only one message and it is short, there is no viable way to break this cipher.
