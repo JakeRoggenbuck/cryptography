@@ -36,6 +36,10 @@ sbox = [[shift_alpha(alpha, shift_column)[i] + (shift_alpha(alpha, shift_row)[j]
 
 |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+|  | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
+
+|  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
 | 1 | **re** | **rf** | **rg** | **rh** | **ri** | **rj** | **rk** | **rl** | **rm** | **rn** | **ro** | **rp** | **rq** | **rr** | **rs** | **rt** | **ru** | **rv** | **rw** | **rx** | **ry** | **rz** | **ra** | **rb** | **rc** | **rd** |
 | 2 | **se** | **sf** | **sg** | **sh** | **si** | **sj** | **sk** | **sl** | **sm** | **sn** | **so** | **sp** | **sq** | **sr** | **ss** | **st** | **su** | **sv** | **sw** | **sx** | **sy** | **sz** | **sa** | **sb** | **sc** | **sd** |
 | 3 | **te** | **tf** | **tg** | **th** | **ti** | **tj** | **tk** | **tl** | **tm** | **tn** | **to** | **tp** | **tq** | **tr** | **ts** | **tt** | **tu** | **tv** | **tw** | **tx** | **ty** | **tz** | **ta** | **tb** | **tc** | **td** |
@@ -62,3 +66,34 @@ sbox = [[shift_alpha(alpha, shift_column)[i] + (shift_alpha(alpha, shift_row)[j]
 | 24 | **oe** | **of** | **og** | **oh** | **oi** | **oj** | **ok** | **ol** | **om** | **on** | **oo** | **op** | **oq** | **or** | **os** | **ot** | **ou** | **ov** | **ow** | **ox** | **oy** | **oz** | **oa** | **ob** | **oc** | **od** |
 | 25 | **pe** | **pf** | **pg** | **ph** | **pi** | **pj** | **pk** | **pl** | **pm** | **pn** | **po** | **pp** | **pq** | **pr** | **ps** | **pt** | **pu** | **pv** | **pw** | **px** | **py** | **pz** | **pa** | **pb** | **pc** | **pd** |
 | 26 | **qe** | **qf** | **qg** | **qh** | **qi** | **qj** | **qk** | **ql** | **qm** | **qn** | **qo** | **qp** | **qq** | **qr** | **qs** | **qt** | **qu** | **qv** | **qw** | **qx** | **qy** | **qz** | **qa** | **qb** | **qc** | **qd** |
+
+### Verification
+
+If we look at the table, we see that the `h` character is denoted by `8` and the `e` character is denoted by `5`
+
+```python 'ignore
+string = "he"
+print("The encrypted string '%s' will be: %s" % (string, encrypt(string)))
+print("The decrypted string '%s' will be: %s" % (encrypt(string), decrypt(encrypt(string))))
+```
+
+Result: 
+
+<img width="775" alt="Screen Shot 2022-12-21 at 9 07 57 PM" src="https://user-images.githubusercontent.com/114739901/209061352-b379e066-ea67-42cc-b32e-6c246a6239a6.png">
+
+```
+string = "hello world"
+```
+
+Result:
+
+<img width="635" alt="Screen Shot 2022-12-21 at 9 11 40 PM" src="https://user-images.githubusercontent.com/114739901/209061878-59d91b5a-2566-4485-9895-f6be3e7cc34b.png">
+
+<img width="635" alt="Screen Shot 2022-12-21 at 9 12 00 PM" src="https://user-images.githubusercontent.com/114739901/209061884-df74de7d-ee86-497d-80b4-7bb509cc80ae.png">
+
+<img width="635" alt="Screen Shot 2022-12-21 at 9 12 27 PM" src="https://user-images.githubusercontent.com/114739901/209061888-986d603c-a7bf-4de5-bd9c-046270db4a74.png">
+
+<img width="635" alt="Screen Shot 2022-12-21 at 9 13 06 PM" src="https://user-images.githubusercontent.com/114739901/209061894-f2ac3d57-634d-4197-ab9f-c794ef1ade76.png">
+
+<img width="631" alt="Screen Shot 2022-12-21 at 9 15 11 PM" src="https://user-images.githubusercontent.com/114739901/209062119-cc8c969e-3f3e-4ec1-94f7-ca0b8b2a975c.png">
+
