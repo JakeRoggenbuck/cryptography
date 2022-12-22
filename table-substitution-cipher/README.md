@@ -2,7 +2,7 @@
 
 This substitution cipher looks up each plaintext letter in an encryption table and writes the corresponding ciphertext letter in its place. Evidently, the decryption table is the inverse of the encryption table
 
-```
+```python ,ignore
 decryption_table = {v: k for k, v in encryption_table.items()}
 ```
 
