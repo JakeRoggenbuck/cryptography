@@ -40,6 +40,8 @@ print(box)
 
 # Takes in a digraph argument and returns the correct ciphertext digraph
 def get_ciphertext(digraph: str) -> str:
+    cdigraph = ""
+
     # We never include handling for empty plaintext in encrypt().
     if digraph == "":
         return
@@ -50,6 +52,10 @@ def get_ciphertext(digraph: str) -> str:
     # found for both chars.
     finished = [0, 0] 
 
+    # Checks each row for a character match. Once found, set respective
+    # row variable to iterated row index. Repeat for both digraph characters.
+    # Once row is found, set column equal to character index in row.
+    # Once row and column are found for both characters, break out of loop.
     for row in box:
         for i in range(2):
             if row.__contains__(digraph[i]):
@@ -61,19 +67,21 @@ def get_ciphertext(digraph: str) -> str:
 
     # Case one: Both in same row
     if (rows[0] == rows[1]):
-        pass
+        for i in range(len(digraph)):
+            cdigraph += box[rows[0]][(cols[i] + 1) % 5]
 
     # Case two: Both in same column
-    if (cols[0] == cols[1]):
-        pass
-
+    elif (cols[0] == cols[1]):
+        for i in range(len(digraph)):
+            cdigraph += box[(rows[i] + 1) % 5][cols[0]]
+        
     # Case three: Both in different rows and columns
     else:
         pass
 
-    return rows, cols
+    return cdigraph
 
-print(get_ciphertext("oz"))
+print(get_ciphertext("ho"))
 
 def encrypt(plaintext: str) -> str:
     plaintext = plaintext.replace(" ", "").lower()
