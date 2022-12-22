@@ -11,6 +11,9 @@ shift_row = main.shift_row
 shift_column = main.shift_column
 shift_alpha = main.shift_alpha
 
+sbox = [[shift_alpha(alpha, shift_column)[i] + (shift_alpha(alpha, shift_row)[j])
+         for j in range(len(alpha))] for i in range(len(alpha))]
+
 # Everything local inside function so that it can be imported if needed.
 def get_table():
     table = "|  |"
@@ -23,7 +26,7 @@ def get_table():
     for j in range(1, len(alpha) + 1):
         table += "\n| %s |" % j
         for i in range(1, len(alpha) + 1):
-            table += "  |"
+            table += " %s |" % sbox[j - 1][i - 1]
     return table
 
 if __name__ == "__main__":
