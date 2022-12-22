@@ -13,6 +13,7 @@ encryption = dict(zip(list(plaintext), list(ciphertext)))
 decryption = dict(zip(list(ciphertext), list(plaintext)))
 
 def encrypt(plaintext):
+    plaintext = plaintext.replace(" ", "")
     return ''.join(encryption[c] for c in plaintext)
 
 def decrypt(ciphertext):
