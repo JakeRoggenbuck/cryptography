@@ -36,4 +36,45 @@ box equals a value of:
 [['s', 'h', 'a', 'd', 'o'], ..., ['t', 'u', 'v', 'y', 'z']]
 """
 
+print(box)
 
+# Takes in a digraph argument and returns the correct ciphertext digraph
+def get_ciphertext(digraph: str) -> str:
+    # We never include handling for empty plaintext in encrypt().
+    if digraph == "":
+        return
+
+    active_row: int
+    for row in box:
+        for letter in row:
+            if letter == digraph[0]:
+                active_row = box.index(row)
+                break
+
+    return active_row
+print(get_ciphertext("sh"))
+def encrypt(plaintext: str) -> str:
+    plaintext = plaintext.replace(" ", "").lower()
+
+    # If the plaintext is one character, a digraph does not exist. Create and return
+    # ciphertext digraph using 'z' char as padding.
+    if (len(plaintext) == 1):
+        return box[alpha.index('z')][alpha.index(plaintext)]
+
+    # At this point, len(plaintext) >= 2. Create the digraph list using 
+    # only even pairs of letters. Handling for if plaintext is odd 
+    # (ex. 7 letters) occurs on line 60.
+    ciphertext = ""
+    #digraphs = [plaintext[i] + plaintext[i + 1]
+    #            for i in range(len(plaintext) - 1) if i % 2 == 0]
+
+    # Populate 'ciphertext' string with ciphertext digraphs
+    #for i in digraphs:
+    #    ciphertext += sbox[alpha.index(i[1])][alpha.index(i[0])]
+
+    # If the plaintext length is odd, add a new ciphertext digraph using the last
+    # character of plaintext and the char 'z' as padding.
+    #if (len(plaintext) % 2 == 1):
+    #    ciphertext += sbox[alpha.index('z')][alpha.index(plaintext[-1])]
+
+    return ciphertext
