@@ -70,7 +70,18 @@ def decrypt(ciphertext) -> str:
     digraphs = [ciphertext[i] + ciphertext[i + 1]
                 for i in range(len(ciphertext) - 1) if i % 2 == 0]
     
+    # Looks for plaintext row associated with the first letter of the digraph.
+    # Finds column by looking for the position of the digraph in the sbox[row] array.
     for i in digraphs:
-        plaintext += sbox[alpha.index(i[1])][alpha.index(i[0])]
-    
+        row = list(sbox).index(sbox[shift_alpha(alpha, shift_column).index(i[0])])
+        column = sbox[row].index(i)
+        plaintext += (alpha[column] + alpha[row])
+
     return plaintext
+print("\n")
+
+string = "From TEO"
+print("Encrypting string %s... %s" % (string, encrypt(string)))
+print("Decrypting string %s... %s" % (encrypt(string), decrypt(encrypt(string))))
+
+print("\n")
