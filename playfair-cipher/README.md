@@ -96,7 +96,7 @@ Result:
 # Test cases
 
 ```python 'ignore
-string = "tests"  # odd length
+string = "tests" 
 ```
 
 <img width="634" alt="Screen Shot 2022-12-22 at 5 51 09 PM" src="https://user-images.githubusercontent.com/114739901/209254981-2d08e7d8-b751-4e2c-8f22-9581c971f451.png">
@@ -107,5 +107,19 @@ string = "hello world"  # repeating letter in digraph
 ```
 
 <img width="632" alt="Screen Shot 2022-12-22 at 5 52 40 PM" src="https://user-images.githubusercontent.com/114739901/209255140-37ac45ea-cab0-4d69-bea8-cace24bd2647.png">
+
+```python 'ignore
+string = "my name is teo"
+```
+
+<img width="635" alt="Screen Shot 2022-12-22 at 5 56 26 PM" src="https://user-images.githubusercontent.com/114739901/209255590-e1c0066f-3495-436e-b7c5-9fdce2f6fcee.png">
+
+```python 'ignore
+string = "wOrd"
+```
+
+<img width="631" alt="Screen Shot 2022-12-22 at 5 57 20 PM" src="https://user-images.githubusercontent.com/114739901/209255677-efd6fae1-d4cc-4b91-a875-6209496388be.png">
+
+
 
 
