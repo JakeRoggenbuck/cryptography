@@ -82,4 +82,17 @@ In the example below, the plaintext digraph is `br`. These two points serve as t
 > `b` -> `f`  
 > `n` -> `r`  
 
+### Verification
+
+
+```python 'ignore
+string = "test"
+print("Encrypting string %s... %s" % (string, encrypt(string)))
+print("Decrypting string %s... %s" % (encrypt(string), decrypt(encrypt(string))))
+```
+
+Result:
+
+<img width="635" alt="Screen Shot 2022-12-22 at 5 43 19 PM" src="https://user-images.githubusercontent.com/114739901/209254193-7c3a1c6c-b3d9-43dd-857d-56d03902eefc.png">
+
 
