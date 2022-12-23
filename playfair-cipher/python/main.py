@@ -21,7 +21,7 @@ alpha = "abcdefghijklmnopqrstuvwyz"
 # in with the rest of the ordered alphabet letters
 def shift_alpha(key, alpha):
     arr = ""
-    for char in key:
+    for char in key.replace(" ",""):
         arr += char
     for char in alpha:
         if char not in arr:
@@ -158,5 +158,3 @@ def decrypt(ciphertext: str) -> str:
         plaintext += get_plaintext(digraph)
     
     return plaintext
-
-decrypt(encrypt("hello world"))
