@@ -12,6 +12,12 @@ In cryptography, a key is typically a string of characters used within an algori
 
 The matrix of this cipher has no labels and is a 25 letter list wrapped into a 5x5 matrix. If the key is `shadow`, the first six elements of the list will be `s`, `h`, `a`, `d`, `o`, `w`, where the `w` wraps around to the second row while the rest lies in the first row.
 
+After the key is finished populating the beginning of the list, the rest of the list will be filled with the leftover alphabet letters in order. In other words, the seventh element will be `b`. The eighth `c`. The ninth `e`.
+
+<table>
+<tr><th>6</th><th>25</th></tr>
+<tr><td>
+
 | s | h | a | d | o |
 | :---: | :---: | :---: | :---: | :---: |
 | **w** |   |   |   |   |
@@ -19,7 +25,7 @@ The matrix of this cipher has no labels and is a 25 letter list wrapped into a 5
 | ⠀ |   |   |   |   |
 | ⠀ |   |   |   |   |
 
-After the key is finished populating the beginning of the list, the rest of the list will be filled with the leftover alphabet letters in order. In other words, the seventh element will be `b`. The eighth `c`. The ninth `e`.
+</td><td>
 
 | s | h | a | d | o |
 | :---: | :---: | :---: | :---: | :---: |
@@ -27,6 +33,9 @@ After the key is finished populating the beginning of the list, the rest of the 
 | **g** | **i** | **j** | **k** | **l** |
 | **m**| **n** | **p** | **q** | **r** |
 | **t** | **u** | **v** | **y** | **z** |
+
+</td></tr>
+</table>
 
 > Did you notice that the letter `x` is missing? That is because in a 5x5 matrix, one letter from the 26 letter alphabet will be missing! We are choosing `x` to fill this role.
 
@@ -61,7 +70,7 @@ encrypt('bc')  # return 'cd'
 
 - **Case 3**: Neither of the above two cases apply. When this happens, form a rectangle with each plaintext letter serving as diagonal vertices. The two opposite vertices are the corresponding ciphertext letters.
 
-In the example below, the plaintext digraph is `br`. These two points serve as the diagonal vertices of a rectangle. The opposite two vertices, `f` and `n`, make up the ciphertext digraph.
+In the example below, the plaintext digraph is `br`. These two points serve as the diagonal vertices of a rectangle. The opposite two vertices, `f` and `n`, make up the ciphertext digraph. `b` points to `f` while `r` points to `n` for encryption substitution.
 
 | s | h | a | d | o |
 | :---: | :---: | :---: | :---: | :---: |
@@ -70,7 +79,60 @@ In the example below, the plaintext digraph is `br`. These two points serve as t
 | **m**| ***`n`*** | **p** | **q** | ***`r`*** |
 | **t** | **u** | **v** | **y** | **z** |
 
-> `b` -> `f`  
-> `n` -> `r`  
+### Verification
+
+The word `test` gets split into the digraphs `te` and `st`. The `t` and `e` characters are not in the same row nor in the same column, so the digraph abides by `case 3`. Forming a rectangle with `t` and `e` at diagonal vertices, the other two vertices are `y` and `w`, combining to form the ciphertext digraph. Alternatively, the `st` digraph's characters (`s` and `t`) lay in the same column, making its encryption abide by `case 2`. Each of the digraph's plaintext letters encrypts by shifting down one letter (or looping back to the top if there are no lower letters). 
+
+```python 'ignore
+string = "test"
+print("Encrypting string %s... %s" % (string, encrypt(string)))
+print("Decrypting string %s... %s" % (encrypt(string), decrypt(encrypt(string))))
+```
+
+Result:
+
+<img width="635" alt="Screen Shot 2022-12-22 at 5 43 19 PM" src="https://user-images.githubusercontent.com/114739901/209254193-7c3a1c6c-b3d9-43dd-857d-56d03902eefc.png">
+
+# Test cases
+
+```python 'ignore
+string = "tests" 
+```
+
+<img width="634" alt="Screen Shot 2022-12-22 at 5 51 09 PM" src="https://user-images.githubusercontent.com/114739901/209254981-2d08e7d8-b751-4e2c-8f22-9581c971f451.png">
+
+
+```python 'ignore
+string = "hello world"  # repeating letter in digraph
+```
+
+<img width="632" alt="Screen Shot 2022-12-22 at 5 52 40 PM" src="https://user-images.githubusercontent.com/114739901/209255140-37ac45ea-cab0-4d69-bea8-cace24bd2647.png">
+
+```python 'ignore
+string = "my name is teo"
+```
+
+<img width="635" alt="Screen Shot 2022-12-22 at 5 56 26 PM" src="https://user-images.githubusercontent.com/114739901/209255590-e1c0066f-3495-436e-b7c5-9fdce2f6fcee.png">
+
+```python 'ignore
+string = "wOrd"
+```
+
+<img width="631" alt="Screen Shot 2022-12-22 at 5 57 20 PM" src="https://user-images.githubusercontent.com/114739901/209255677-efd6fae1-d4cc-4b91-a875-6209496388be.png">
+
+```python 'ignore
+string = "a"
+```
+
+<img width="632" alt="Screen Shot 2022-12-22 at 5 58 23 PM" src="https://user-images.githubusercontent.com/114739901/209255814-2cf05a51-1d0b-428b-bd3b-618f21574564.png">
+
+
+```python 'ignore
+string " b  "  # whitespaces
+```
+
+<img width="637" alt="Screen Shot 2022-12-22 at 5 58 51 PM" src="https://user-images.githubusercontent.com/114739901/209255921-fa717b8f-b2a3-4feb-b77c-e947ec15d887.png">
+
+
 
 
