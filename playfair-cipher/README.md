@@ -99,6 +99,10 @@ Result:
 - Instead of adding a padding letter (`z`) in between repeating letters within a digraph, another variation just discard the second repeating letter altogether.
 - Instead of adding a padding letter (`z`) in between repeating letters within a digraph, another variation appends the padded letter before the first repeated letter. This shifts every letter over by one, causing the repeating letters to not exist within the same digraph.
 
+### Breaking the playfair cipher
+
+As usual with substitution ciphers, frequency analysis is a valuable tool for breaking the playfair cipher. Matching frequent ciphertext pairs to common pairs in the english language. Another approach is brute forcing, which is possible given how small scale this alt sbox is.
+
 # Test cases
 
 ```python 'ignore
