@@ -93,6 +93,12 @@ Result:
 
 <img width="635" alt="Screen Shot 2022-12-22 at 5 43 19 PM" src="https://user-images.githubusercontent.com/114739901/209254193-7c3a1c6c-b3d9-43dd-857d-56d03902eefc.png">
 
+### Known variations:
+
+- Instead of leaving out a letter like `x` from the matrix, some variations combine `i` and `j` into a single matrix cell. This means that all alpha letters can be used. In our cipher, we cannot encrypt a word with the letter `x`.
+- Instead of adding a padding letter (`z`) in between repeating letters within a digraph, another variation just discard the second repeating letter altogether.
+- Instead of adding a padding letter (`z`) in between repeating letters within a digraph, another variation appends the padded letter before the first repeated letter. This shifts every letter over by one, causing the repeating letters to not exist within the same digraph.
+
 # Test cases
 
 ```python 'ignore
