@@ -84,7 +84,7 @@ In the example below, the plaintext digraph is `br`. These two points serve as t
 
 ### Verification
 
-The word `test` gets split into the digraphs `te` and `st`. The `t` and `e` characters are not in the same row nor in the same column, so the digraph abides by `case 3`. Forming a rectangle with `t` and `e` at diagonal vertices, the other two vertices are `y` and `w`, combining to form the ciphertext digraph. Alternatively, the `st` digraph's characters (`s` and `t`) lie in the same column, making its encryption abide by `case 2`. Each of the digraph's plaintext letters encrypts by shifting down one letter (or looping back to the top if there are no lower letters). 
+The word `test` gets split into the digraphs `te` and `st`. The `t` and `e` characters are not in the same row nor in the same column, so the digraph abides by `case 3`. Forming a rectangle with `t` and `e` at diagonal vertices, the other two vertices are `y` and `w`, combining to form the ciphertext digraph. Alternatively, the `st` digraph's characters (`s` and `t`) lay in the same column, making its encryption abide by `case 2`. Each of the digraph's plaintext letters encrypts by shifting down one letter (or looping back to the top if there are no lower letters). 
 
 ```python 'ignore
 string = "test"
@@ -99,14 +99,14 @@ Result:
 # Test cases
 
 ```python 'ignore
-string = "tests"
+string = "tests"  # odd length
 ```
 
 <img width="634" alt="Screen Shot 2022-12-22 at 5 51 09 PM" src="https://user-images.githubusercontent.com/114739901/209254981-2d08e7d8-b751-4e2c-8f22-9581c971f451.png">
 
 
 ```python 'ignore
-string = "hello world"
+string = "hello world"  # repeating letter in digraph
 ```
 
 <img width="632" alt="Screen Shot 2022-12-22 at 5 52 40 PM" src="https://user-images.githubusercontent.com/114739901/209255140-37ac45ea-cab0-4d69-bea8-cace24bd2647.png">
