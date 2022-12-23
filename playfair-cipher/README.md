@@ -120,6 +120,19 @@ string = "wOrd"
 
 <img width="631" alt="Screen Shot 2022-12-22 at 5 57 20 PM" src="https://user-images.githubusercontent.com/114739901/209255677-efd6fae1-d4cc-4b91-a875-6209496388be.png">
 
+```python 'ignore
+string = "a"
+```
+
+<img width="632" alt="Screen Shot 2022-12-22 at 5 58 23 PM" src="https://user-images.githubusercontent.com/114739901/209255814-2cf05a51-1d0b-428b-bd3b-618f21574564.png">
+
+
+```python 'ignore
+string " b  "  # whitespaces
+```
+
+<img width="637" alt="Screen Shot 2022-12-22 at 5 58 51 PM" src="https://user-images.githubusercontent.com/114739901/209255921-fa717b8f-b2a3-4feb-b77c-e947ec15d887.png">
+
 
 
 
