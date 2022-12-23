@@ -84,6 +84,7 @@ In the example below, the plaintext digraph is `br`. These two points serve as t
 
 ### Verification
 
+The word `test` gets split into the digraphs `te` and `st`. The `t` and `e` characters are not in the same row nor in the same column, so the digraph abides by `case 3`. Forming a rectangle with `t` and `e` at diagonal vertices, the other two vertices are `y` and `w`, combining to form the ciphertext digraph. Alternatively, the `st` digraph's characters (`s` and `t`) lie in the same column, making its encryption abide by `case 2`. Each of the digraph's plaintext letters encrypts by shifting down one letter (or looping back to the top if there are no lower letters). 
 
 ```python 'ignore
 string = "test"
