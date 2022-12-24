@@ -109,7 +109,34 @@ For an explanation of how `plaintext` turns into `ciphertext`, visit the title l
 
 The **playfair cipher**! This one is sort of like the [digraph substitution cipher](https://github.com/thondascully/cryptography/tree/master/digraph-substitution-cipher) in utilizing a table (this one's is 5x5) and multiple digraph substitutions, but this cipher has a few more rules. Unlike the digraph substitution cipher mentioned above, this one does not have a ciphertext digraph intersection value based on two inputted label points from a plaintext digraph. The playfair cipher instead shifts isolated digraph characters up, down, or diagonally in the matrix according to the digraph classification.
 
-Additionally, this cipher has a [key](https://en.wikipedia.org/wiki/Key_(cryptography))! See more at the title link.
+Additionally, this cipher has a [key](https://en.wikipedia.org/wiki/Key_(cryptography))! See more about keys and about the playfair encryption method at the title link.
+
+```python 'ignore
+key = "shadow"
+```
+
+table>
+<tr><th>6</th><th>25</th></tr>
+<tr><td>
+
+| s | h | a | d | o |
+| :---: | :---: | :---: | :---: | :---: |
+| **w** |   |   |   |   |
+| ⠀ |   |   |   |   |
+| ⠀ |   |   |   |   |
+| ⠀ |   |   |   |   |
+
+</td><td>
+
+| s | h | a | d | o |
+| :---: | :---: | :---: | :---: | :---: |
+| **w** | **b** | **c** | **e** | **f** |
+| **g** | **i** | **j** | **k** | **l** |
+| **m**| **n** | **p** | **q** | **r** |
+| **t** | **u** | **v** | **y** | **z** |
+
+</td></tr>
+</table>
 
 ### [Shift Cipher](shift-cipher)
 Otherwise known as a caesar cipher, the **shift cipher** takes each letter in a plaintext message and shifts it by `n` indexes in the looping alphabet.
