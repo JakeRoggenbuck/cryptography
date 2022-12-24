@@ -45,7 +45,7 @@ The methodology of concealing the content of messages. Originates from the Greek
 - [ ] NTRU encryption algorithm
 - [ ] Ring Learning With Errors
 
-### [Table-substitution-cipher](table-substitution-cipher)
+### [Table substitution cipher](table-substitution-cipher)
 
 This substitution cipher looks up each plaintext letter in an encryption table and writes the corresponding ciphertext letter in its place. Evidently, the decryption table is the inverse of the encryption table
 
@@ -65,7 +65,7 @@ Random permutation example: `OaTyqwGerPSApdfghjXUIlzxcZLMVWKuZvbCRnmYNoQBkisFDtJ
 
 > plaintext to ciphertext values like `O`, `a`, and `T` are chosen randomly (or by using a generator).
 
-### [Digraph-substitution-cipher](digraph-substitution-cipher)
+### [Digraph substitution cipher](digraph-substitution-cipher)
 
 Similar to the monoalphabetic [table substitution cipher](https://github.com/thondascully/cryptography/tree/master/table-substitution-cipher), this is another substitution cipher. Unlike the monoalphabetic table cipher, this cipher replaces every plaintext digraph with its corresponding ciphertext digraph instead of replacing every plaintext letter with its corresponding ciphertext letter.
 
