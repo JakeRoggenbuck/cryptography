@@ -1,6 +1,6 @@
 ### Playfair cipher
 
-The **playfair cipher**! This one is sort of like the [digraph substitution cipher](https://github.com/thondascully/cryptography/tree/master/digraph-substitution-cipher), except there are a few more rules. Unlike the digraph substitution cipher, this one does not have a ciphertext digraph intersection value based on the two inputted label points.
+The **playfair cipher**! This one is sort of like the [digraph substitution cipher](https://github.com/thondascully/cryptography/tree/master/digraph-substitution-cipher) in utilizing a table (this one's is 5x5) and multiple digraph substitutions, but this cipher has a few more rules. Unlike the digraph substitution cipher mentioned above, this one does not have a ciphertext digraph intersection value based on two inputted label points from a plaintext digraph. The playfair cipher instead shifts isolated digraph characters up, down, or diagonally in the matrix according to the digraph classification.
 
 For starters, this cipher has a [key](https://en.wikipedia.org/wiki/Key_(cryptography))!
 
@@ -92,6 +92,16 @@ print("Decrypting string %s... %s" % (encrypt(string), decrypt(encrypt(string)))
 Result:
 
 <img width="635" alt="Screen Shot 2022-12-22 at 5 43 19 PM" src="https://user-images.githubusercontent.com/114739901/209254193-7c3a1c6c-b3d9-43dd-857d-56d03902eefc.png">
+
+### Known variations:
+
+- Instead of leaving out a letter like `x` from the matrix, some variations combine `i` and `j` into a single matrix cell. This means that all alpha letters can be used. In our cipher, we cannot encrypt a word with the letter `x`.
+- Instead of adding a padding letter (`z`) in between repeating letters within a digraph, another variation just discard the second repeating letter altogether.
+- Instead of adding a padding letter (`z`) in between repeating letters within a digraph, another variation appends the padded letter before the first repeated letter. This shifts every letter over by one, causing the repeating letters to not exist within the same digraph.
+
+### Breaking the playfair cipher
+
+As usual with substitution ciphers, frequency analysis is a valuable tool for breaking the playfair cipher. Matching frequent ciphertext pairs to common pairs in the english language. Another approach is brute forcing, which is possible given how small scale this alt sbox is.
 
 # Test cases
 

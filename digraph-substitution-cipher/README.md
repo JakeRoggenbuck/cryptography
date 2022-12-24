@@ -93,6 +93,19 @@ For example, `(C, P)` returns `GG` . Since each row and column is an ordered alp
 
 In reality, an sbox design should choose each digraph result uniformly at random without replacement, but there other are ways to design it to be even more resistant to [differential cryptanaylsis](https://en.wikipedia.org/wiki/Differential_cryptanalysis)
 
+### Immediate ways to strengthen the digraph substitution cipher:
+
+Instead of using a `row shift` and a `column shift`, one can create the row and column labels from two separate mixed alphabets created from two different keys. In this case, the mixed alphabet is created by writing out the key word and then filling in the rest of the alphabet using the unused letters. The [playfair cipher](https://github.com/thondascully/cryptography/tree/master/playfair-cipher)'s matrix is created using this mixed alphabet method, so visit that directory for more information.
+
+Example:
+
+```python 'ignore
+key = "shadow"
+mixed_alphabet_for_label = "shadowbcefgijklmnpqrtuvxyz"
+```
+
+Additionally, one can randomize the alphabet completely to make an sbox with 26^26 plaintext options for every ciphertext digraph position.
+
 # Test cases
 
 ```python 'ignore
