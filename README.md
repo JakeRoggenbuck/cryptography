@@ -3,11 +3,20 @@ The methodology of concealing the content of messages. Originates from the Greek
 
 [^1]: HOFFSTEIN, JEFFREY. Mathematical Cryptography. SPRINGER-VERLAG NEW YORK, 2016. 
 
-**Project progress** (python only + no codebreaker required yet)
+### Ciphers?
+A function that encrypts some plaintext into an unreadable ciphertext.
 
-- [x] Table substitution cipher
-- [x] Digraph substitution cipher
-- [x] Playfair cipher
+### Codebreaking?
+The analysis and attack of classical cryptosystems. In the context of modern cryptography, codebreaking refers to the exploitation of modern encryption systems.
+
+------------------------
+
+### Project progress
+_(python only + no codebreaker required yet)_
+
+- [x] **Table substitution cipher**
+- [x] **Digraph substitution cipher**
+- [x] **Playfair cipher**
 - [ ] Shift cipher
 - [ ] Vigenere cipher
 - [ ] Affine cipher
@@ -46,6 +55,8 @@ The methodology of concealing the content of messages. Originates from the Greek
 - [ ] Ring Learning With Errors
 
 > The first third is mainly symmetric cryptography. The rest is assymetric cryptography.
+
+----------------------
 
 ### [Table substitution cipher](table-substitution-cipher)
 
