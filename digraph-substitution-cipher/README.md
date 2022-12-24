@@ -1,4 +1,4 @@
-### Digraph-substitution-cipher
+### Digraph substitution cipher
 
 Similar to the [monoalphabetic table-substitution-cipher](https://github.com/thondascully/cryptography/edit/master/table-substitution-cipher), this is another substitution cipher. Unlike the monoalphabetic table cipher, instead of replacing every plaintext letter with its corresponding ciphertext letter,
 this cipher replaces every plaintext digraph with its corresponding ciphertext digraph.
