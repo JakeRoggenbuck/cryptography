@@ -74,4 +74,20 @@ If there is only one message and it is short, there is no viable way to break th
 
 # Test cases
 
+```python 'ignore
+string = "hello world"
+```
 
+<img width="639" alt="Screen Shot 2022-12-23 at 9 36 49 PM" src="https://user-images.githubusercontent.com/114739901/209423049-0f0d59b0-61e9-4ae5-9111-98a9abf00180.png">
+
+```python 'ignore
+string = "  from Teo  "
+```
+
+<img width="635" alt="Screen Shot 2022-12-23 at 9 37 59 PM" src="https://user-images.githubusercontent.com/114739901/209423069-91d01935-1207-413b-b804-9f573365b4a0.png">
+
+```python 'ignore
+string = "'"
+```
+
+<img width="629" alt="Screen Shot 2022-12-23 at 9 41 28 PM" src="https://user-images.githubusercontent.com/114739901/209423141-7328a521-3b27-4379-b565-422fdc16e563.png">
