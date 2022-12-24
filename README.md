@@ -5,6 +5,11 @@ The methodology of concealing the content of messages. Originates from the Greek
 
 ### Ciphers?
 A function that encrypts some plaintext into an unreadable ciphertext.
+```python 'ignore
+def cipher(plaintext) -> str:
+    ...
+    return ciphertext
+```
 
 ### Codebreaking?
 The analysis and attack of classical cryptosystems. In the context of modern cryptography, codebreaking refers to the exploitation of modern encryption systems.
