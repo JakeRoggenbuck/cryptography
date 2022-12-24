@@ -115,7 +115,7 @@ Additionally, this cipher has a [key](https://en.wikipedia.org/wiki/Key_(cryptog
 key = "shadow"
 ```
 
-table>
+<table>
 <tr><th>6</th><th>25</th></tr>
 <tr><td>
 
