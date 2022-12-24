@@ -1,4 +1,4 @@
-### Table-substitution-cipher
+### Table substitution cipher
 
 This substitution cipher looks up each plaintext letter in an encryption table and writes the corresponding ciphertext letter in its place. Evidently, the decryption table is the inverse of the encryption table
 
