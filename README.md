@@ -53,13 +53,27 @@ This substitution cipher looks up each plaintext letter in an encryption table a
 decryption_table = {v: k for k, v in encryption_table.items()}
 ```
 
+In a table substitution cipher, the ciphertext alphabet is a randomly chosen permutation of the 26 alphabet letters. The random permutation for this cipher is both lowercase and capital alphabet letters
+
+Random permutation example: `OaTyqwGerPSApdfghjXUIlzxcZLMVWKuZvbCRnmYNoQBkisFDtJH`
+
+| plaintext | ciphertext |
+| :---: | :---: |
+| `a` | `O` |
+| `b` | `a` |
+| `c` | `T` |
+
+> plaintext to ciphertext values like `O`, `a`, and `T` are chosen randomly (or by using a generator).
+
 ### [Digraph-substitution-cipher](digraph-substitution-cipher)
 
-Similar to the monoalphabetic table-substitution-cipher, this is another substitution cipher. Unlike the monoalphabetic table cipher, instead of replacing every plaintext letter with its corresponding ciphertext letter, this cipher replaces every plaintext digraph with its corresponding ciphertext digraph.
+Similar to the monoalphabetic [table substitution cipher](https://github.com/thondascully/cryptography/tree/master/table-substitution-cipher), this is another substitution cipher. Unlike the monoalphabetic table cipher, this cipher replaces every plaintext digraph with its corresponding ciphertext digraph instead of replacing every plaintext letter with its corresponding ciphertext letter.
 
 ### [Playfair cipher](playfair-cipher)
 
-The playfair cipher! This one is sort of like the [digraph substitution cipher](https://github.com/thondascully/cryptography/tree/master/digraph-substitution-cipher) in utilizing a table (this one is 5x5) and digraph substitutions, but this cipher has a few more rules. Unlike the digraph substitution cipher mentioned above, this one does not have a ciphertext digraph intersection value based on the two inputted label points. The playfair cipher instead shifts isolated digraph characters up, down, or diagonally in the matrix according to the digraph classification.
+The **playfair cipher**! This one is sort of like the [digraph substitution cipher](https://github.com/thondascully/cryptography/tree/master/digraph-substitution-cipher) in utilizing a table (this one's is 5x5) and multiple digraph substitutions, but this cipher has a few more rules. Unlike the digraph substitution cipher mentioned above, this one does not have a ciphertext digraph intersection value based on two inputted label points from a plaintext digraph. The playfair cipher instead shifts isolated digraph characters up, down, or diagonally in the matrix according to the digraph classification.
+
+For starters, this cipher has a [key](https://en.wikipedia.org/wiki/Key_(cryptography))!
 
 Additionally, this cipher has a [key](https://en.wikipedia.org/wiki/Key_(cryptography))! See more at the title link.
 
