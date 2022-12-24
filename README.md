@@ -45,6 +45,8 @@ The methodology of concealing the content of messages. Originates from the Greek
 - [ ] NTRU encryption algorithm
 - [ ] Ring Learning With Errors
 
+> The first third is mainly symmetric cryptography. The rest is assymetric cryptography.
+
 ### [Table substitution cipher](table-substitution-cipher)
 
 This substitution cipher looks up each plaintext letter in an encryption table and writes the corresponding ciphertext letter in its place. Evidently, the decryption table is the inverse of the encryption table
