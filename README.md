@@ -57,6 +57,12 @@ decryption_table = {v: k for k, v in encryption_table.items()}
 
 Similar to the monoalphabetic table-substitution-cipher, this is another substitution cipher. Unlike the monoalphabetic table cipher, instead of replacing every plaintext letter with its corresponding ciphertext letter, this cipher replaces every plaintext digraph with its corresponding ciphertext digraph.
 
+### [Playfair cipher](playfair-cipher)
+
+The playfair cipher! This one is sort of like the [digraph substitution cipher](https://github.com/thondascully/cryptography/tree/master/digraph-substitution-cipher) in utilizing a table (this one is 5x5) and digraph substitutions, but this cipher has a few more rules. Unlike the digraph substitution cipher mentioned above, this one does not have a ciphertext digraph intersection value based on the two inputted label points. The playfair cipher instead shifts isolated digraph characters up, down, or diagonally in the matrix according to the digraph classification.
+
+Additionally, this cipher has a [key](https://en.wikipedia.org/wiki/Key_(cryptography))! See more at the title link.
+
 ### [Shift Cipher](shift-cipher)
 Otherwise known as a caesar cipher, the **shift cipher** takes each letter in a plaintext message and shifts it by `n` indexes in the looping alphabet.
 
