@@ -3,11 +3,11 @@ The methodology of concealing the content of messages. Originates from the Greek
 
 [^1]: HOFFSTEIN, JEFFREY. Mathematical Cryptography. SPRINGER-VERLAG NEW YORK, 2016. 
 
-**Project progress**
+**Project progress** (python only + no codebreaker required yet)
 
-- [ ] Table substitution cipher
-- [ ] Digraph substitution cipher
-- [ ] Playfair cipher
+- [x] Table substitution cipher
+- [x] Digraph substitution cipher
+- [x] Playfair cipher
 - [ ] Shift cipher
 - [ ] Vigenere cipher
 - [ ] Affine cipher
@@ -67,13 +67,34 @@ Random permutation example: `OaTyqwGerPSApdfghjXUIlzxcZLMVWKuZvbCRnmYNoQBkisFDtJ
 
 ### [Digraph substitution cipher](digraph-substitution-cipher)
 
-Similar to the monoalphabetic [table substitution cipher](https://github.com/thondascully/cryptography/tree/master/table-substitution-cipher), this is another substitution cipher. Unlike the monoalphabetic table cipher, this cipher replaces every plaintext digraph with its corresponding ciphertext digraph instead of replacing every plaintext letter with its corresponding ciphertext letter.
+Similar to the monoalphabetic [table substitution cipher](https://github.com/thondascully/cryptography/tree/master/table-substitution-cipher), this is another substitution cipher. Unlike the monoalphabetic table cipher, this cipher replaces every plaintext digraph with its corresponding ciphertext digraph instead of replacing every plaintext letter with its corresponding ciphertext letter. Each ciphertext digraph is located by position given a row index and column index determined by the plaintext digraph
+
+```python 'ignore
+shift_row = 4
+shift_column = 17
+
+alpha = "abcdefghijklmnopqrstuvwxyz"
+
+# Shifts the alphabet over by `shift` amount. Loops overflow values to start.
+def shift_alpha(alpha, shift) -> str:
+    return alpha[shift:len(alpha)] + alpha[:shift]
+```
+```python 'ignore
+sbox = [[shift_alpha(alpha, shift_column)[i] + (shift_alpha(alpha, shift_row)[j])
+         for j in range(len(alpha))] for i in range(len(alpha))]
+```
+
+| plaintext | ciphertext |
+| :---: | :---: |
+| `aa` | `re` |
+| `ab` | `se` |
+| `he` | `vl` |
+
+For an explanation of how `plaintext` turns into `ciphertext`, visit the title link.
 
 ### [Playfair cipher](playfair-cipher)
 
 The **playfair cipher**! This one is sort of like the [digraph substitution cipher](https://github.com/thondascully/cryptography/tree/master/digraph-substitution-cipher) in utilizing a table (this one's is 5x5) and multiple digraph substitutions, but this cipher has a few more rules. Unlike the digraph substitution cipher mentioned above, this one does not have a ciphertext digraph intersection value based on two inputted label points from a plaintext digraph. The playfair cipher instead shifts isolated digraph characters up, down, or diagonally in the matrix according to the digraph classification.
-
-For starters, this cipher has a [key](https://en.wikipedia.org/wiki/Key_(cryptography))!
 
 Additionally, this cipher has a [key](https://en.wikipedia.org/wiki/Key_(cryptography))! See more at the title link.
 
