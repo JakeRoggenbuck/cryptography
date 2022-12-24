@@ -1,6 +1,6 @@
 ### Playfair cipher
 
-The **playfair cipher**! This one is sort of like the [digraph substitution cipher](https://github.com/thondascully/cryptography/tree/master/digraph-substitution-cipher), except there are a few more rules. Unlike the digraph substitution cipher, this one does not have a ciphertext digraph intersection value based on the two inputted label points.
+The **playfair cipher**! This one is sort of like the [digraph substitution cipher](https://github.com/thondascully/cryptography/tree/master/digraph-substitution-cipher) in utilizing a table (this one's is 5x5) and multiple digraph substitutions, but this cipher has a few more rules. Unlike the digraph substitution cipher mentioned above, this one does not have a ciphertext digraph intersection value based on two inputted label points from a plaintext digraph. The playfair cipher instead shifts isolated digraph characters up, down, or diagonally in the matrix according to the digraph classification.
 
 For starters, this cipher has a [key](https://en.wikipedia.org/wiki/Key_(cryptography))!
 
