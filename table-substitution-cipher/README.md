@@ -10,6 +10,14 @@ In a table substitution cipher, the ciphertext alphabet is a randomly chosen per
 
 Random permutation: `OaTyqwGerPSApdfghjXUIlzxcZLMVWKuZvbCRnmYNoQBkisFDtJH`
 
+| plaintext | ciphertext |
+| :---: | :---: |
+| `a` | `O` |
+| `b` | `a` |
+| `c` | `T` |
+
+> plaintext to ciphertext values like `O`, `a`, and `T` are chosen randomly (or by using a generator).
+
 > Note that in order for decryption to work, the encryption function must have the property that no two plaintext letters go to the same ciphertext letter. A function with this property is said to be _one-to-one_ or _injective_[^1].
 
 [^1]: HOFFSTEIN, JEFFREY. Mathematical Cryptography. SPRINGER-VERLAG NEW YORK, 2016. 
