@@ -1,7 +1,6 @@
 ### Digraph substitution cipher
 
-Similar to the [monoalphabetic table-substitution-cipher](https://github.com/thondascully/cryptography/edit/master/table-substitution-cipher), this is another substitution cipher. Unlike the monoalphabetic table cipher, instead of replacing every plaintext letter with its corresponding ciphertext letter,
-this cipher replaces every plaintext digraph with its corresponding ciphertext digraph.
+Similar to the monoalphabetic [table substitution cipher](https://github.com/thondascully/cryptography/tree/master/table-substitution-cipher), this is another substitution cipher. Unlike the monoalphabetic table cipher, this cipher replaces every plaintext digraph with its corresponding ciphertext digraph instead of replacing every plaintext letter with its corresponding ciphertext letter. Each ciphertext digraph is located by position given a row index and column index determined by the plaintext digraph
 
 ### What does the digraph substitution cipher do?
 
@@ -35,6 +34,12 @@ def shift_alpha(alpha, shift) -> str:
 sbox = [[shift_alpha(alpha, shift_column)[i] + (shift_alpha(alpha, shift_row)[j])
          for j in range(len(alpha))] for i in range(len(alpha))]
 ```
+
+| plaintext | ciphertext |
+| :---: | :---: |
+| `aa` | `re` |
+| `ab` | `se` |
+| `he` | `vl` |
 
 `sbox` is displayed below (generated with [print_table.py](https://github.com/thondascully/cryptography/blob/master/digraph-substitution-cipher/python/print_table.py))
 
